@@ -34,7 +34,7 @@
 >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://discord.gg/DK4GGbfV">Dashboard</a>
+          <a class="nav-link" href="key-catalog.php">Catalogue</a>
         </li>
         <li class="nav-item dropdown">
           <a

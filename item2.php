@@ -16,3 +16,4 @@ include "simple-catalog.php"?>
 
 <?php
 include "footer.php"?>
+
