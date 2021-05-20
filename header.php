@@ -8,12 +8,12 @@
       <meta name="description" content="SILENT : Boutique de vente de baskets de marque">
       <title>SILENT</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
-      <link href="css/style.css" rel="stylesheet" type="text/css" />
+      <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="https://www.youtube.com/watch?v=ZyhrYis509A">
-      <img src="img/logo silent.jpg" alt="Logo silent"/>
+      <img src="logo%20silent.jpg" alt="Logo silent"/>
     </a>
     <button
       class="navbar-toggler"
