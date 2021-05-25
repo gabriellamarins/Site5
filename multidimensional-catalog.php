@@ -129,29 +129,40 @@ foreach ($value1 as $key2 => $value2 ) { // pra depois poder entrar nos detalhes
 
 <h6> Liste de Produits 3</h6>
 <?php
-//
-//$i = 0;
-//while($i < count ($products)) {
-//    $product= $products [$i];
-//    $i = $i+1;
-//    echo "<li>$product</li>";
-//}
-//
-//?>
+
+$i = 0;
+while($i < count ($products)) {
+ //   $product= $products [$i];
+   // $keys[$i];
+    echo "<li>$keys[$i]</li>";
+    echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
+    echo "Prix:  " .$products [$keys[$i]]["price"]. "€"."<br>";
+    echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
+    echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
+    echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
+$i = $i+1;
+}
+?>
 <br>
 <br>
 
 
-
+<h6> Liste de Produits 4</h6>
 <?php
-//$i = 0;
-//do{
-//    $product = $products [$i];
-//    $i= $i+1;
-//    echo "" . $product . "<br>";
-//}
-//while($i < count ($products));
-//?>
+$i = 0;
+do{
+ //   $product = $products [$i];
+
+    echo "<li>$keys[$i]</li>";
+    echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
+    echo "Prix:  " .$products [$keys[$i]]["price"]. "€"."<br>";
+    echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
+    echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
+    echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
+    $i= $i+1;
+}
+while($i < count ($products));
+?>
 <br>
 <br>
 
