@@ -1,5 +1,6 @@
 <?php
-include "header.php"?>
+include "header.php";
+include "my_functions.php";?>
 
 
 
@@ -8,7 +9,7 @@ $products = [
 
     'nike' => [
         'name' => 'SuperX',
-        'price' => 200,
+        'price' => 20000,
         'weight' => 400,
         'discount' => 10,
         'picture' => 'https://images-na.ssl-images-amazon.com/images/I/81xDzahd9PL._AC_UX500_.jpg'
@@ -17,7 +18,7 @@ $products = [
 
 'puma' => [
     'name' => 'AmazingX',
-    'price' => 200,
+    'price' => 33000,
     'weight' => 400,
     'discount' => 10,
     'picture' => 'https://images-na.ssl-images-amazon.com/images/I/819tIj8wVmL._AC_UX395_.jpg',
@@ -26,7 +27,7 @@ $products = [
 
 'veja' => [
     'name' => 'GreatX',
-    'price' => 200,
+    'price' => 42000,
     'weight' => 400,
     'discount' => 10,
     'picture' => 'https://m.media-amazon.com/images/I/61v5ACBpE-L._AC_SX395._SX._UX._SY._UY_.jpg',
@@ -47,7 +48,6 @@ $products = [
 </h1>
 
 <?php
-
 //var_dump($products)?>
 
 <table style="width:100%">
@@ -74,9 +74,9 @@ $products = [
 </table>
 
 
-<h6> Liste de Produits 1</h6>
 
 
+<h6> Liste de Produits 1 (for)</h6>
 <?php
 //var_dump($products[0]);
 //$keys = ['nike','puma', 'veja'];
@@ -90,14 +90,11 @@ for ($i = 0; $i < count ($products); $i=$i+1) {
 
      echo "<li>".$keys[$i]."</li>";
      echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
-     echo "Prix:  " .$products [$keys[$i]]["price"]. "€"."<br>";
+     formatPrice($products [$keys[$i]]["price"]);
      echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
      echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
      echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
 
-
-//    $keys = $products [$i];
-     //print_r (array_keys($products));
 //    echo <img src = '<?php echo $products [$keys[$i]] ["picture"]
 
 
@@ -107,27 +104,46 @@ for ($i = 0; $i < count ($products); $i=$i+1) {
 <br>
 
 
-<h6> Liste de Produits 2</h6>
+<h6> Liste de Produits 2 (foreach) </h6>
 <?php
 //var_dump($keys);
-foreach ($products as  $key1 => $value1 ) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
-echo $key1 . "<br>";
-foreach ($value1 as $key2 => $value2 ) { // pra depois poder entrar nos detalhes de cada tabela
-    if ($key2 == 'picture') {
-//        echo "<img src = \"" . $value2 . "\" alt = \"''\"  width = \"''\"/>";
-        echo "<img src='" . $value2 . "' alt = 'x'/>";
-    }
-    echo $value2 . "<br>";
-    }
-//    echo $value2;
 
-//    echo "Modèle:  " . $products ['$keys']["name"]."<br>";
+foreach ($products as  $key1 => $value2) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
+ //   var_dump ($key1);
+//    var_dump ($key1['name']);
+    var_dump($value2);
+
+    echo $value2."<br>";
+
+//echo $key1 . "<br>";
+//echo $keys;
+//    foreach ($key1 as $key2 => $value2) { // pra depois poder entrar nos detalhes de cada tabela
+//         echo "<br>"."debut de boucle foreach" ."<br>";
+//        var_dump ($key2);
+//        var_dump ($value2);
+//        if ($key2 == 'price') {
+//            formatPrice($products [$value2]["price"]);
+//        }
+//        else if ($key2 == 'picture') {
+////        echo "<img src = \"" . $value2 . "\" alt = \"''\"  width = \"''\"/>";
+//            echo "<img src='" . $value2 . "' alt = ''/>";
+//        }
+//        else {
+////            echo $value2;
+//        }
+//
+
+
+ //   }
+
 }
+
+
 ?>
 <br>
 <br>
 
-<h6> Liste de Produits 3</h6>
+<h6> Liste de Produits 3 (while)</h6>
 <?php
 
 $i = 0;
@@ -136,7 +152,7 @@ while($i < count ($products)) {
    // $keys[$i];
     echo "<li>$keys[$i]</li>";
     echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
-    echo "Prix:  " .$products [$keys[$i]]["price"]. "€"."<br>";
+    formatPrice($products [$keys[$i]]["price"])."<br>";
     echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
     echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
     echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
@@ -147,7 +163,7 @@ $i = $i+1;
 <br>
 
 
-<h6> Liste de Produits 4</h6>
+<h6> Liste de Produits 4 (do while)</h6>
 <?php
 $i = 0;
 do{
@@ -155,7 +171,7 @@ do{
 
     echo "<li>$keys[$i]</li>";
     echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
-    echo "Prix:  " .$products [$keys[$i]]["price"]. "€"."<br>";
+    formatPrice($products [$keys[$i]]["price"]);
     echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
     echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
     echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
@@ -169,8 +185,8 @@ while($i < count ($products));
 
 </body>
 
-
 <?php
+
 include "footer.php"?>
 </html>
 
