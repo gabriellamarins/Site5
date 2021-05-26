@@ -62,9 +62,9 @@ $products = [
         <td> <img src='<?php echo $products ['veja']['picture']?>' width = "400" alt="white veja shoes"></td>
     </tr>
     <tr>
-        <td> Prix: <?php echo $products ['nike']['price']?> € </td>
-        <td> Prix: <?php echo $products ['puma'] ['price']?> € </td>
-        <td> Prix: <?php echo $products ['veja'] ['price']?> € </td>
+        <td> Prix: <?php echo $products ['nike']['price']?>  </td>
+        <td> Prix: <?php echo $products ['puma'] ['price']?>  </td>
+        <td> Prix: <?php echo $products ['veja'] ['price']?>  </td>
     </tr>
     <tr>
         <td> Reduction: <?php echo $products ['nike'] ['discount'] ?> %</td> <!--como botar o % fora do php e adiciona-lo sem precisar fazer uma concatenaçao-->
@@ -91,6 +91,7 @@ for ($i = 0; $i < count ($products); $i=$i+1) {
      echo "<li>".$keys[$i]."</li>";
      echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
      formatPrice($products [$keys[$i]]["price"]);
+    formatPrice (priceExcludingVAT ($products [$keys[$i]]["price"]));
      echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
      echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
      echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
@@ -108,13 +109,24 @@ for ($i = 0; $i < count ($products); $i=$i+1) {
 <?php
 //var_dump($keys);
 
-foreach ($products as  $key1 => $value2) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
- //   var_dump ($key1);
-//    var_dump ($key1['name']);
-    var_dump($value2);
+//foreach ($products as  $key1 => $value2) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
+// //
+ // var_dump ($key1['name']);
+//    var_dump($value2);
+//
+//    echo $value2."<br>";
 
-    echo $value2."<br>";
+//  foreach ($products as $key1 => $value2) {
+//      var_dump ($key1['name']);
+//      echo $key1;
+// if($key1== 'picture') {
+//
+//echo "<img src='" . $value2 . "' alt = ''/>";
+//}
+//}
+?>
 
+<?php
 //echo $key1 . "<br>";
 //echo $keys;
 //    foreach ($key1 as $key2 => $value2) { // pra depois poder entrar nos detalhes de cada tabela
@@ -136,7 +148,7 @@ foreach ($products as  $key1 => $value2) { //precisa sempre fazer em dois tempos
 
  //   }
 
-}
+
 
 
 ?>
@@ -153,6 +165,7 @@ while($i < count ($products)) {
     echo "<li>$keys[$i]</li>";
     echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
     formatPrice($products [$keys[$i]]["price"])."<br>";
+    formatPrice (priceExcludingVAT ($products [$keys[$i]]["price"]));
     echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
     echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
     echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
@@ -172,6 +185,7 @@ do{
     echo "<li>$keys[$i]</li>";
     echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
     formatPrice($products [$keys[$i]]["price"]);
+    formatPrice (priceExcludingVAT ($products [$keys[$i]]["price"]));
     echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
     echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
     echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
