@@ -66,55 +66,50 @@ $products = [
         <td> Prix: <?php echo $products ['puma'] ['price'] ?>  </td>
         <td> Prix: <?php echo $products ['veja'] ['price'] ?>  </td>
     </tr>
-<!--    <tr>-->
-<!--        <td> Reduction: --><?php //echo $products ['nike'] ['discount'] ?><!-- %</td>-->
-<!--        como botar o % fora do php e adiciona-lo sem precisar fazer uma concatenaçao-->
-<!--        <td> Reduction: --><?php //echo $products ['puma'] ['discount'] ?><!-- %</td>-->
-<!--        <td> Reduction: --><?php //echo $products ['veja']['discount'] ?><!-- %</td>-->
-<!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <td> Reduction: --><?php //echo $products ['nike'] ['discount'] ?><!-- %</td>-->
+    <!--        como botar o % fora do php e adiciona-lo sem precisar fazer uma concatenaçao-->
+    <!--        <td> Reduction: --><?php //echo $products ['puma'] ['discount'] ?><!-- %</td>-->
+    <!--        <td> Reduction: --><?php //echo $products ['veja']['discount'] ?><!-- %</td>-->
+    <!--    </tr>-->
 </table>
-
 
 
 <h6> Liste de Produits 2 (foreach) </h6>
 <?php
 
 
-foreach ($products as  $product => $items) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
+foreach ($products as $product => $items) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
 
     echo $items['name'] . "<br>";
-    foreach ($items as  $items2 => $item) {
-        if ($items2 == 'picture' )
-        echo "<img src='".$item."' alt = ''/>" ."<br>";
+    foreach ($items as $items2 => $item) {
+        if ($items2 == 'picture')
+            echo "<img src='" . $item . "' alt = ''/>" . "<br>";
     }
     formatPrice($items['price']) . "<br>";
     ?>
 
     <form method="post" action="cart.php">
-    <p>
-    Quantité
-    </p>
-    <input type="number" name="quantite" value="0"/>
-<!--      <p> Prix Totale: --><?php //?><!--</p>-->
+        <p>
+            Quantité
+        </p>
+        <input type="number" name="quantite" value="0"/>
+        <!--      <p> Prix Totale: --><?php //?><!--</p>-->
         <input type="submit" value="Valider"/>
+        <input type="hidden" name="total" value="<?php echo $items['price'];?>"/>
 
 
-
-</form>
-<?php echo '<br>';
+    </form>
+    <?php echo '<br>';
 }
 
 ?>
-
 
 
 <h4>
     Mon Produit
 </h4>
 <p> Prix: </p>
-
-
-
 
 
 </body>
