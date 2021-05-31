@@ -11,7 +11,7 @@ $products = [
         'name' => 'SuperX',
         'price' => 20000,
         'weight' => 400,
-        'discount' => 10,
+        'discount' => 0,
         'picture' => 'https://images-na.ssl-images-amazon.com/images/I/81xDzahd9PL._AC_UX500_.jpg'
     ],
 
@@ -20,7 +20,7 @@ $products = [
         'name' => 'AmazingX',
         'price' => 33000,
         'weight' => 400,
-        'discount' => 10,
+        'discount' => 0,
         'picture' => 'https://images-na.ssl-images-amazon.com/images/I/819tIj8wVmL._AC_UX395_.jpg',
 
     ],
@@ -29,7 +29,7 @@ $products = [
         'name' => 'GreatX',
         'price' => 42000,
         'weight' => 400,
-        'discount' => 10,
+        'discount' => 0,
         'picture' => 'https://m.media-amazon.com/images/I/61v5ACBpE-L._AC_SX395._SX._UX._SY._UY_.jpg',
     ],
 ];
@@ -66,12 +66,11 @@ $products = [
         <td> Prix: <?php echo $products ['puma'] ['price'] ?>  </td>
         <td> Prix: <?php echo $products ['veja'] ['price'] ?>  </td>
     </tr>
-    <!--    <tr>-->
-    <!--        <td> Reduction: --><?php //echo $products ['nike'] ['discount'] ?><!-- %</td>-->
-    <!--        como botar o % fora do php e adiciona-lo sem precisar fazer uma concatenaçao-->
-    <!--        <td> Reduction: --><?php //echo $products ['puma'] ['discount'] ?><!-- %</td>-->
-    <!--        <td> Reduction: --><?php //echo $products ['veja']['discount'] ?><!-- %</td>-->
-    <!--    </tr>-->
+        <tr>
+            <td> Prix HT: <?php echo $products ['nike'] ['discount'] ?> </td>
+            <td> Prix HT: <?php echo $products ['puma'] ['discount'] ?> </td>
+            <td> Prix HT: <?php echo $products ['veja']['discount'] ?> </td>
+        </tr>
 </table>
 
 
@@ -86,17 +85,23 @@ foreach ($products as $product => $items) { //precisa sempre fazer em dois tempo
         if ($items2 == 'picture')
             echo "<img src='" . $item . "' alt = ''/>" . "<br>";
     }
-    formatPrice($items['price']) . "<br>";
+    echo "Prix Unitaire: " . formatPrice($items['price']) . "<br>";
+//    prix_tva(formatPrice($items['price']), 1);
     ?>
+
+<?php echo $tva =  "TVA= " . (formatPrice($items['price']* 10/100 ));
+////echo $tva;?>
+
 
     <form method="post" action="cart.php">
         <p>
-            Quantité
+            Quantité:
         </p>
         <input type="number" name="quantite" value="0"/>
         <!--      <p> Prix Totale: --><?php //?><!--</p>-->
         <input type="submit" value="Valider"/>
         <input type="hidden" name="total" value="<?php echo $items['price'];?>"/>
+
 
 
     </form>

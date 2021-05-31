@@ -18,9 +18,10 @@ function formatPrice ($prix)
     $formatPrice = $prix / 100;
 
 
-    echo "Prix: " . $formatPrice . "€"."<br>";
+    return  $formatPrice . "€"."<br>";
 
 }
+
 
 function priceExcludingVAT ($prix_ttc) {
 
@@ -33,3 +34,7 @@ function displayDiscountedPrice($prix2, $discount) {
     return $prix2 - ($prix2/100 * $discount);
 }
 
+
+function prix_tva ($prix, $prix_ttc) {
+    echo $prix - $prix_ttc;
+}
