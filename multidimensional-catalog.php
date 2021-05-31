@@ -1,39 +1,15 @@
 <?php
 include "header.php";
-include "my_functions.php"; ?>
-
-
-
-<?php
-$products = [
-
-    'nike' => [
-        'name' => 'SuperX',
-        'price' => 20000,
-        'weight' => 400,
-        'discount' => 0,
-        'picture' => 'https://images-na.ssl-images-amazon.com/images/I/81xDzahd9PL._AC_UX500_.jpg'
-    ],
-
-
-    'puma' => [
-        'name' => 'AmazingX',
-        'price' => 33000,
-        'weight' => 400,
-        'discount' => 0,
-        'picture' => 'https://images-na.ssl-images-amazon.com/images/I/819tIj8wVmL._AC_UX395_.jpg',
-
-    ],
-
-    'veja' => [
-        'name' => 'GreatX',
-        'price' => 42000,
-        'weight' => 400,
-        'discount' => 0,
-        'picture' => 'https://m.media-amazon.com/images/I/61v5ACBpE-L._AC_SX395._SX._UX._SY._UY_.jpg',
-    ],
-];
+include "my_functions.php";
+include "Liste_produits.php";
+global $products;
 ?>
+
+
+
+
+
+
 
 
 <html lang="english">
@@ -47,8 +23,6 @@ $products = [
     Sneakers
 </h1>
 
-<?php
-//var_dump($products)?>
 
 <table style="width:100%">
     <tr>
@@ -66,11 +40,11 @@ $products = [
         <td> Prix: <?php echo $products ['puma'] ['price'] ?>  </td>
         <td> Prix: <?php echo $products ['veja'] ['price'] ?>  </td>
     </tr>
-        <tr>
-            <td> Prix HT: <?php echo $products ['nike'] ['discount'] ?> </td>
-            <td> Prix HT: <?php echo $products ['puma'] ['discount'] ?> </td>
-            <td> Prix HT: <?php echo $products ['veja']['discount'] ?> </td>
-        </tr>
+    <tr>
+        <td> Prix HT: <?php echo $products ['nike'] ['discount'] ?> </td>
+        <td> Prix HT: <?php echo $products ['puma'] ['discount'] ?> </td>
+        <td> Prix HT: <?php echo $products ['veja']['discount'] ?> </td>
+    </tr>
 </table>
 
 
@@ -86,10 +60,9 @@ foreach ($products as $product => $items) { //precisa sempre fazer em dois tempo
             echo "<img src='" . $item . "' alt = ''/>" . "<br>";
     }
     echo "Prix Unitaire: " . formatPrice($items['price']) . "<br>";
-//    prix_tva(formatPrice($items['price']), 1);
     ?>
 
-<?php echo $tva =  "TVA= " . (formatPrice($items['price']* 10/100 ));
+<!--    --><?php //echo $tva = "TVA= " . (formatPrice($items['price'] * 10 / 100));
 ////echo $tva;?>
 
 
@@ -97,11 +70,14 @@ foreach ($products as $product => $items) { //precisa sempre fazer em dois tempo
         <p>
             Quantité:
         </p>
+        <select name="resort" id="">
+            <?php foreach ($products as $key => $sneaker) { ?>
+                <option value="<?php echo $key; ?>"><?php echo $sneaker['name']; ?></option>
+            <?php } ?>
+        </select>
         <input type="number" name="quantite" value="0"/>
-        <!--      <p> Prix Totale: --><?php //?><!--</p>-->
         <input type="submit" value="Valider"/>
-        <input type="hidden" name="total" value="<?php echo $items['price'];?>"/>
-
+        <input type="hidden" name="total" value="<?php echo $items['price']; ?>"/>
 
 
     </form>

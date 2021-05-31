@@ -34,7 +34,13 @@ function displayDiscountedPrice($prix2, $discount) {
     return $prix2 - ($prix2/100 * $discount);
 }
 
-
-function prix_tva ($prix, $prix_ttc) {
-    echo $prix - $prix_ttc;
+function tvaTotal()
+{
+    return (int)(($_POST['total'] * $_POST['quantite']) * 10 / 100 / 100);
 }
+
+
+
+//function prix_tva ($prix, $prix_ttc) {
+//    echo $prix - $prix_ttc;
+//}
