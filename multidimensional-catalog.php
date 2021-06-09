@@ -2,12 +2,9 @@
 include "header.php";
 include "my_functions.php";
 include "Liste_produits.php";
+
 global $products;
 ?>
-
-
-
-
 
 
 

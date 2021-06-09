@@ -14,6 +14,7 @@ $last_item = end($products);
 sort ($products) ."<br>";
 //print_r ($products);
 echo $first_item . "<br>" . $last_item;
+;
 ?>
 
 <html lang="english">
@@ -67,7 +68,7 @@ $i = 0;
     <br>
     <br>
 
-
+    <h6> Liste de Produits 4</h6>
     <?php
     $i = 0;
     do{
@@ -80,7 +81,9 @@ $i = 0;
 <br>
 <br>
 
+    <h6>Prix en euros</h6>
 <?php
+include "my_functions.php";
 include "footer.php" ?>
 
     </body>

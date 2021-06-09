@@ -12,8 +12,11 @@ echo "$name </br> $prix euro <img src = '$img' alt = cat/>";
 ?>
 
 <?php
-include "simple-catalog.php"?>
+include "simple-catalog.php";
+?>
 
+<h6>Prix en euros</h6>
 <?php
+include "my_functions.php";
 include "footer.php"?>
 

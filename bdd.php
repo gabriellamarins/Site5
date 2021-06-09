@@ -84,12 +84,14 @@ function forth_query() {
 ?>
 
 <?php
-function insert_query() {
+function insert_query( $id, $date, $customer, $number) {
 $bdd = queries();
 
-$q5 = $bdd->query('INSERT INTO `orders` (`id`, `date`, `customer_id`,`number` ) VALUES (7, \'2021-06-03 16:46:32\', 1, \'\order00007\')');
+$q5 = $bdd->query('INSERT INTO `orders` (`id`, `date`, `customer_id`,`number` ) VALUES (:date, )');
 
+$q5
 
+}
 echo "nouveau produit ajouté" ;
 }
 

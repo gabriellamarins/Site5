@@ -1,0 +1,439 @@
+----item----
+<?php
+include "header.php"?>
+
+<?php
+$name = "Crazy Cat:";
+$prix = 15;
+$img = 'https://wallpaperaccess.com/full/428160.jpg';
+
+
+echo "$name </br> $prix euro <img src = '$img' alt = cat/>";
+
+?>
+
+<?php
+include "simple-catalog.php"?>
+
+<?php
+include "footer.php"?>
+
+
+------header----
+
+
+<!DOCTYPE html>
+  <html lang="fr">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width+initial-scale=1.0"/>
+      <meta name="description" content="SILENT : Boutique de vente de baskets de marque">
+      <title>SILENT</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://www.youtube.com/watch?v=ZyhrYis509A">
+      <img src="logo%20silent.jpg" alt="Logo silent"/>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+          >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html"
+    >Home</a
+>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="key-catalog.php">Catalogue</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+                >
+                Menu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="index.html#features">FEATURES</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="index.html#partenaires"
+    >PARTENAIRES</a
+>
+            </li>
+            <li>
+              <a class="dropdown-item" href="index.html#succes">SUCCES</a>
+            </li>
+            <li><a class="dropdown-item" href="Team-BS.html">TEAM</a></li>
+            <li>
+              <a class="dropdown-item" href="catalogue.html">CATALOGUE</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="Formulaire_2.html">NOUS CONTACTER</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+                >Disabled</a
+>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+              />
+        <button class="btn btn-outline-success" type="submit">
+    Search
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+-----simple-cat--------
+
+<?php
+$products = ["nike","veja", "puma"];
+$first_item = $products[0];
+$last_item = end($products);
+
+
+sort ($products);
+//print_r ($products);
+echo $first_item . "<br>" . $last_item;
+
+
+
+-------footer------
+
+<!--DEBUT DE MON FOOTER-->
+<footer class="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 text-center" ><a href="#" id="footerfaq">FAQ</a> </div>
+      <div class="row">
+        <div class="col-12 text-center" ><a href="Formulaire_2.html" id="footercontact">CONTACT</a> </div>
+      </div>
+    </div>
+    <!-- Ligne de 12 colonnes -->
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3" id="reseaux">
+      <!-- 1/3 de la largeur (largeur de 4 colonnes)-->
+      <div class="silent col">
+        <a href="index.html">
+          <img src="img/logo silent.jpg" alt="Logo silent"
+    /></a>
+SILENT
+      </div>
+      <!-- 1/3 de la largeur (largeur de 4 colonnes)-->
+      <div class="col">
+        <div class="reseau">
+          <a href="https://www.facebook.com/RickAstley">
+            <img src="img/facebook_1.png" alt="Logo facebook"
+    /></a>
+          <a href="https://www.instagram.com/silent_fnf/">
+            <img src="img/insta_1.png" alt="Logo instagram"
+    /></a>
+          <a href="https://twitter.com/Silent_Fnf"
+    ><img src="img/twitter_1.png" alt="Logo twitter"
+    /></a>
+        </div>
+      </div>
+      <!-- 1/3 de la largeur (largeur de 4 colonnes)-->
+      <div class="col">
+        <div class="campus">
+          <a href="https://le-campus-numerique.fr/">
+            <img
+              src="img/logo_campus_header_1.png"
+              alt="Logo campus numerique"
+              class="logo-campus"
+/></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="texte">
+        <div class="col-12 text-center text-muted">
+Site by Silent Corps <br />
+          Copyright © 2020, Silent<br />
+          Terms & Conditions - Privacy - Legal Notice
+</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--FIN DE MON FOOTER-->
+</body>
+</html>
+
+-----------
+
+
+------key-cat-----------
+
+
+<?php
+$nike = [
+    "name" => "SuperX",
+    "price" => 200,
+    "weight" => 400,
+    "discount" => 10,
+    "picture" => 'https://i.pinimg.com/originals/64/2d/a0/642da085c57b27d693dd1c8df6f0b58a.jpg'
+];
+
+$puma = [
+    "name" => "AmazingX",
+    "price" => 200,
+    "weight" => 400,
+    "discount" => 10,
+    "picture" => 'https://images-na.ssl-images-amazon.com/images/I/819tIj8wVmL._AC_UX395_.jpg',
+];
+
+$veja = [
+    "name" => "GreatX",
+    "price" => 200,
+    "weight" => 400,
+    "discount" => 10,
+    "picture" => 'https://m.media-amazon.com/images/I/61v5ACBpE-L._AC_SX395._SX._UX._SY._UY_.jpg',
+];
+
+?>
+
+<html lang="english">
+    <head>
+        <title>
+            Catalogue
+        </title>
+    </head>
+    <body>
+    <h1 style>
+        Sneakears
+    </h1>
+
+
+    <table style="width:100%">
+        <tr>
+            <th>Nike <?php echo $nike ['name'] ?> </th>
+            <th>Puma <?php echo $puma ['name'] ?> </th>
+            <th>Veja <?php echo $veja ['name'] ?> </th>
+        </tr>
+<tr>
+    <td> <img src='<?php echo $nike ['picture']?>' width = "400"></td>
+    <td> <img src='<?php echo $puma ['picture']?>' width = "400"></td>
+    <td> <img src='<?php echo $veja ['picture']?>' width = "400"></td>
+</tr>
+<tr>
+    <td> Prix: <?php echo $nike ['price']?> € </td>
+    <td> Prix: <?php echo $puma ['price']?> € </td>
+    <td> Prix: <?php echo $veja ['price']?> € </td>
+</tr>
+        <tr>
+            <td> Reduction: <?php echo $nike ['discount'] ?> %</td> //exemplo de como colocar o texto fora do php
+            <td> Reduction: <?php echo $puma ['discount'] ?> %</td>
+            <td> Reduction: <?php echo $veja ['discount'] ?> % </td>
+        </tr>
+    </table>
+
+
+    </body>
+</html>
+
+
+
+
+
+-------------- multi 25/05-----------------
+
+<?php
+include "header.php"?>
+
+
+
+<?php
+$products = [
+
+    'nike' => [
+        'name' => 'SuperX',
+        'price' => 200,
+        'weight' => 400,
+        'discount' => 10,
+        'picture' => 'https://images-na.ssl-images-amazon.com/images/I/81xDzahd9PL._AC_UX500_.jpg'
+    ],
+
+
+'puma' => [
+    'name' => 'AmazingX',
+    'price' => 200,
+    'weight' => 400,
+    'discount' => 10,
+    'picture' => 'https://images-na.ssl-images-amazon.com/images/I/819tIj8wVmL._AC_UX395_.jpg',
+
+],
+
+'veja' => [
+    'name' => 'GreatX',
+    'price' => 200,
+    'weight' => 400,
+    'discount' => 10,
+    'picture' => 'https://m.media-amazon.com/images/I/61v5ACBpE-L._AC_SX395._SX._UX._SY._UY_.jpg',
+],
+];
+?>
+
+
+<html lang="english">
+<head>
+    <title>
+        Catalogue
+    </title>
+</head>
+<body>
+<h1 style>
+    Sneakers
+</h1>
+
+<?php
+
+//var_dump($products)?>
+
+<table style="width:100%">
+    <tr>
+        <th>Nike <?php echo $products ['nike']['name'] ?> </th>
+        <th>Puma <?php echo $products ['puma']['name']?> </th>
+        <th>Veja <?php echo $products ['veja']['name'] ?> </th>
+    </tr>
+    <tr>
+        <td> <img src='<?php echo $products ['nike']['picture']?>' width = "400" alt="white nike shoes"></td>
+        <td> <img src='<?php echo $products ['puma']['picture']?>' width = "400" alt="white puma shoes"></td>
+        <td> <img src='<?php echo $products ['veja']['picture']?>' width = "400" alt="white veja shoes"></td>
+    </tr>
+    <tr>
+        <td> Prix: <?php echo $products ['nike']['price']?> € </td>
+        <td> Prix: <?php echo $products ['puma'] ['price']?> € </td>
+        <td> Prix: <?php echo $products ['veja'] ['price']?> € </td>
+    </tr>
+    <tr>
+        <td> Reduction: <?php echo $products ['nike'] ['discount'] ?> %</td> <!--como botar o % fora do php e adiciona-lo sem precisar fazer uma concatenaçao-->
+        <td> Reduction: <?php echo $products ['puma'] ['discount'] ?> %</td>
+        <td> Reduction: <?php echo $products ['veja']['discount'] ?> % </td>
+    </tr>
+</table>
+
+
+<h6> Liste de Produits 1</h6>
+
+
+<?php
+//var_dump($products[0]);
+//$keys = ['nike','puma', 'veja'];
+
+
+
+$keys = array_keys ($products);
+//var_dump ($keys);
+
+for ($i = 0; $i < count ($products); $i=$i+1) {
+
+     echo "<li>".$keys[$i]."</li>";
+     echo "Modèle:  " . $products [$keys[$i]]["name"]."<br>";
+     echo "Prix:  " .$products [$keys[$i]]["price"]. "€"."<br>";
+     echo "Poids:  " .$products [$keys[$i]] ["weight"]. "g"."<br>";
+     echo "Réduction:  " .$products [$keys[$i]] ["discount"]. "%"."<br>";
+     echo "<img src = \"" .$products [$keys[$i]] ["picture"]. "\"alt = \"''\"  width = \"''\">";
+
+
+//    $keys = $products [$i];
+     //print_r (array_keys($products));
+//    echo <img src = '<?php echo $products [$keys[$i]] ["picture"]
+
+
+}
+?>
+<br>
+<br>
+
+
+<h6> Liste de Produits 2</h6>
+<?php
+//var_dump($keys);
+foreach ($products as  $key1 => $value1 ) { //precisa sempre fazer em dois tempos, mostrar a primeira tabela primeiro
+echo $key1 . "<br>";
+foreach ($value1 as $key2 => $value2 ) { // pra depois poder entrar nos detalhes de cada tabela
+    if ($key2 == 'picture') {
+//        echo "<img src = \"" . $value2 . "\" alt = \"''\"  width = \"''\"/>";
+        echo "<img src='" . $value2 . "' alt = 'x'/>";
+    }
+    echo $value2 . "<br>";
+    }
+//    echo $value2;
+
+//    echo "Modèle:  " . $products ['$keys']["name"]."<br>";
+}
+?>
+<br>
+<br>
+
+<h6> Liste de Produits 3</h6>
+<?php
+//
+//$i = 0;
+//while($i < count ($products)) {
+//    $product= $products [$i];
+//    $i = $i+1;
+//    echo "<li>$product</li>";
+//}
+//
+//?>
+<br>
+<br>
+
+
+
+<?php
+//$i = 0;
+//do{
+//    $product = $products [$i];
+//    $i= $i+1;
+//    echo "" . $product . "<br>";
+//}
+//while($i < count ($products));
+//?>
+<br>
+<br>
+
+
+</body>
+
+
+<?php
+include "footer.php"?>
+</html>
+
+
