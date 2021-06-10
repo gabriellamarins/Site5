@@ -1,15 +1,14 @@
 <?php
 
 
-function queries() {
 
-      return $bdd = new PDO('mysql:host=localhost;dbname=gabriella_bdd;charset=utf8', 'gabriella38', 'qualauercoisa');
+ $bdd = new PDO('mysql:host=localhost;dbname=gabriella_bdd;charset=utf8', 'gabriella38', 'qualauercoisa');
 
-}
+
 
 
 function first_query() {
-$bdd = queries();
+global $bdd;
 
     $q1 = $bdd->query('SELECT * FROM products');
 
@@ -84,19 +83,19 @@ function forth_query() {
 ?>
 
 <?php
-function insert_query( $id, $date, $customer, $number) {
-$bdd = queries();
-
-$q5 = $bdd->query('INSERT INTO `orders` (`id`, `date`, `customer_id`,`number` ) VALUES (:date, )');
-
-$q5
-
-}
-echo "nouveau produit ajouté" ;
-}
-
-
-?>
+//function insert_query( $id, $date, $customer, $number) {
+//$bdd = queries();
+//
+//$q5 = $bdd->query('INSERT INTO `orders` (`id`, `date`, `customer_id`,`number` ) VALUES (:date, )');
+//
+//$q5
+//
+//}
+//echo "nouveau produit ajouté" ;
+//}
+//
+//
+//?>
 
 
 

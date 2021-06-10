@@ -1,5 +1,6 @@
 <?php
 include "bdd.php";
+require_once "Article.php";
 ?>
 
 <table style="width:100%">
@@ -26,5 +27,20 @@ include "bdd.php";
             <?php echo insert_query() ?>
         </td>
     </tr>
+
+<tr>
+
+</tr>
+
+
 </table>
+
+
+
+
+
+
+
+
+
 
