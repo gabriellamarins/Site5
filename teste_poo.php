@@ -14,4 +14,4 @@ $article->displayArticle();
 
 $articles = new Catalogue();
 
-$articles-> displayAllArticles ();
+$articles-> displayAllArticles();

@@ -38,14 +38,26 @@ class Catalogue {
 
 
 
-    public function displayAllArticles () {
-        print_r ($this->allArticles);
-    }
+//    public function displayAllArticles () {
+//        print_r ($this->allArticles);
+//    }
 
 //
-//public function displayAllArticles () {
-//    foreach ($this->allArticles as $articles) {
-//        $articles->displayArticle();
-//    }
+
+public function displayAllArticles () {
+    foreach ($this->allArticles as $articles) {
+//               var_dump($articles) ;
+     echo $articles['name'] .'<br>'  ;
+     echo $articles['description'].'<br>'  ;
+        echo $articles['price']. '€'.'<br>'  ;
+        echo '<img src='.$articles['image']. 'alt="" width="200">' .'<br>';
+        echo $articles['weight']. ' g'.'<br>'  ;
+        echo $articles['avaliable']. ' - available' . '<br>'  ;
+        echo $articles['category_id']. ' category'.'<br>'  ;
+        echo $articles['quantity']. ' - units' . '<br>'  .'<br>' .'<br>' ;
+
+    }
+//       $articles->displayArticle();
+    }
 
     }

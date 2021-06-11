@@ -2,7 +2,7 @@
 
 
 
- $bdd = new PDO('mysql:host=localhost;dbname=gabriella_bdd;charset=utf8', 'gabriella38', 'qualauercoisa');
+ $bdd = new PDO('mysql:host=localhost;dbname=dump;charset=utf8', 'gabriella2', 'qualquercoisa');
 
 
 
