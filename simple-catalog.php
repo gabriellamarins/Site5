@@ -1,5 +1,7 @@
 <?php
-include "header.php"?>
+include "header.php";
+require_once "Catalogue.php";
+?>
 
 
 
@@ -32,54 +34,63 @@ echo $first_item . "<br>" . $last_item;
     <br>
     <br>
 
-<h6> Liste de Produits 1</h6>
+<!--<h6> Liste de Produits 1</h6>-->
 <?php
-for ($i = 0; $i < count ($products); $i=$i+1) {
-       $product = $products[$i];
-       echo "<li>$product</li>";
-}
-?>
-
-<br>
-<br>
-
-
-    <h6> Liste de Produits 2</h6>
+//for ($i = 0; $i < count ($products); $i=$i+1) {
+//       $product = $products[$i];
+//       echo "<li>$product</li>";
+//}
+//?>
+<!---->
+<!--<br>-->
+<!--<br>-->
+<!---->
+<!---->
+<!--    <h6> Liste de Produits 2</h6>-->
 <?php
-
-foreach ($products as $product) {
-  echo "<li>$product</li>";
-}
-?>
-    <br>
-    <br>
-
-    <h6> Liste de Produits 3</h6>
+//
+//foreach ($products as $product) {
+//  echo "<li>$product</li>";
+//}
+//?>
+<!--    <br>-->
+<!--    <br>-->
+<!---->
+<!--    <h6> Liste de Produits 3</h6>-->
 <?php
+//
+//$i = 0;
+//     while($i < count ($products)) {
+//            $product= $products [$i];
+//            $i = $i+1;
+//            echo "<li>$product</li>";
+//     }
+//
+//?>
+<!--    <br>-->
+<!--    <br>-->
+<!---->
+<!--    <h6> Liste de Produits 4</h6>-->
+<!--    --><?php
+//    $i = 0;
+//    do{
+//        $product = $products [$i];
+//        $i= $i+1;
+//        echo "" . $product . "<br>";
+//    }
+//    while($i < count ($products));
+//    ?>
+<!--<br>-->
+<!--<br>-->
 
-$i = 0;
-     while($i < count ($products)) {
-            $product= $products [$i];
-            $i = $i+1;
-            echo "<li>$product</li>";
-     }
-
-?>
-    <br>
-    <br>
-
-    <h6> Liste de Produits 4</h6>
     <?php
-    $i = 0;
-    do{
-        $product = $products [$i];
-        $i= $i+1;
-        echo "" . $product . "<br>";
-    }
-    while($i < count ($products));
-    ?>
-<br>
-<br>
+
+    $articles = new Catalogue();
+
+    $articles-> displayAllArticles();
+
+
+?>
 
     <h6>Prix en euros</h6>
 <?php
