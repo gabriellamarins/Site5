@@ -23,40 +23,36 @@ class Catalogue {
 //
 //           array_push ($this->allArticles, $donnees). '<br />';
         foreach($allArticles as $article){
-            $a=new Article($article['name'],$article['description'],$article['price']);
-            array_push($this->allArticles,$a);
+            if($article['size']!= '' or $article['color']!='') {
+                $a = new Bags($article['name'], $article['description'], $article['price'], $article['size'], $article['color']);
+                array_push($this->allArticles, $a);
+            } else {
+                $a = new Article($article['name'], $article['description'], $article['price']);
+                array_push($this->allArticles, $a);
+            }
         }
         $allArticles->fetchAll(Pdo::FETCH_ASSOC);
-    }
 
+        }
+//            $a=new Article($article['name'],$article['description'],$article['price']);
+//            array_push($this->allArticles,$a);
+//        }
+//        $allArticles->fetchAll(Pdo::FETCH_ASSOC);
+//    }
+//
     public function displayAllArticles(){
         foreach($this->allArticles as $article){
-            $article->displayArticle();
+
+            if ($article instanceof Bags) {
+                $article->displayNewAttributes();
+            } else {
+                $article->displayArticle();
+            }
+
         }
     }
 
 
-
-//        $q1->closeCursor();
-
-
-
-
-
-//public function displayAllArticles () {
-//    foreach ($this->allArticles as $articles) {
-////               var_dump($articles) ;
-//         echo $articles['name'] .'<br>'  ;
-//         echo $articles['description'].'<br>'  ;
-//         echo $articles['price']. '€'.'<br>'  ;
-//         echo '<img src='.$articles['image']. 'alt="" width="200">' .'<br>';
-//         echo $articles['weight']. ' g'.'<br>'  ;
-//         echo $articles['available']. ' - available' . '<br>'  ;
-//         echo $articles['category_id']. ' category'.'<br>'  ;
-//         echo $articles['quantity']. ' - units' . '<br>'  .'<br>' .'<br>' ;
-//
-//    }
-////       $articles->displayArticle();
 
 
     }

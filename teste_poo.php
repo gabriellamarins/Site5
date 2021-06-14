@@ -14,7 +14,7 @@ require_once "Bags.php";
 
 //nessa pagina criamos o objeto segundo a classe criada, finalmaente dando valores para os atributos
 
-$article = new Article ('1','lorem ipsum', 50);
+$article = new Article ('','', '');
 $article -> displayArticle();
 
 
@@ -28,7 +28,7 @@ $articles = new Catalogue();
 $articles-> displayAllArticles();
 
 
-$customer = new Client(1,2,3,4,5,6);
+$customer = new Client('','','','','','');
 
 $customer-> displayCustomer() .'<br>';
 ?>
@@ -41,8 +41,8 @@ $customers_list = new ListeClients();
 $customers_list-> displayAllCustomers().'<br>';
 ?>
 
-
+<h1> Sac </h1>
 <?php
-$new_att = new Bags('1','lorem ipsum', 50, "", "" );
-$new_att-> displayNewAttributs();
+$new_att = new Bags('Bag','lorem ipsum', 50, "big", "blue" );
+$new_att-> displayNewAttributes();
 ?>

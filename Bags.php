@@ -18,7 +18,7 @@ parent::__construct($name, $description, $price);
 }
 
 
-}
+
 
 
 
@@ -32,7 +32,7 @@ public function displayNewAttributes() {
         echo '<li>' . 'Color: ' . $this->color . '</li>' . '</ul>';
         }
 
-
+}
 ?>
 
 
