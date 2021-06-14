@@ -2,6 +2,7 @@
 include "bdd.php";
 require_once "Article.php";
 global $products;
+global $bdd;
 ?>
 
 
@@ -32,7 +33,23 @@ global $products;
     </tr>
 
     <tr> <h1> INSERT new product </h1>
-        <?php insert_produit() ?>
+        <?php function insert_product($name,$description,$price,$image) {
+            global $bdd;
+            $req=$bdd->prepare('INSERT INTO products (name,description,price,image) 
+VALUES ( :name,:description,:price,:image)');
+            $req->execute(array('name'=>$name,'description'=>$description,'price'=>$price,'image'=>$image,));
+            echo $name .  ' - produit ajouté';
+            $req->closeCursor();
+
+  }
+        ?>
+
+
+
+
+
+
+
     </tr>
 
 <!--    <form method="post" action="newproduct.php">-->
