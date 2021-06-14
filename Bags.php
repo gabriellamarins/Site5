@@ -6,8 +6,11 @@ require_once "Article.php";
 class Bags extends Article {
 
 
-public $size;
+private $size;
+private $material;
 public $color;
+
+
 
 public function __construct(string $name, $description, $price, $size, $color)
 {
@@ -19,11 +22,19 @@ parent::__construct($name, $description, $price);
 
 
 
+    public function getSize(){
+        return $this->size;
+    }
+
+    public function setMaterial($material){
+        $this->material=$material;
+    }
+
+    public function getMaterial(){
+        return $this->material;}
 
 
-
-
-public function displayNewAttributes() {
+    public function displayNewAttributes() {
 
         echo '<li>' . 'Name: ' . $this->name . '</li>';
         echo '<li>' . 'Description: ' . $this->description . '</li>';

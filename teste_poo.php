@@ -44,5 +44,8 @@ $customers_list-> displayAllCustomers().'<br>';
 <h1> Sac </h1>
 <?php
 $new_att = new Bags('Bag','lorem ipsum', 50, "big", "blue" );
-$new_att-> displayNewAttributes();
+echo $new_att ->getSize();
+$new_att->setMaterial();
+echo $new_att->getMaterial();
+//$new_att-> displayNewAttributes();
 ?>
