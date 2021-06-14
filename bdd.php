@@ -3,7 +3,7 @@
 
 
  $bdd = new PDO('mysql:host=localhost;dbname=dump;charset=utf8', 'gabriella2', 'qualquercoisa');
-
+global $bdd;
 
 
 
@@ -32,7 +32,7 @@ while ($donnees = $q1->fetch()){
 //Query 4 -
 
 function second_query() {
-    $bdd = queries();
+    global $bdd;
 
     $q2 = $bdd->query('SELECT orders.number, orders.date FROM orders WHERE orders.date > subdate(current_date, 10)');
 
@@ -53,7 +53,7 @@ function second_query() {
 <?php
 //Query 3 - (query 5)
 function tird_query() {
-    $bdd = queries();
+   global $bdd;
 
     $q3 = $bdd->query('SELECT products.name, order_product.quantity, products.price FROM products JOIN order_product ON order_product.product_id = products.id WHERE order_product.order_id = 1');
 
@@ -70,7 +70,7 @@ function tird_query() {
 //Query 4 - (query 6)
 
 function forth_query() {
-    $bdd = queries();
+   global $bdd;
     $q4 = $bdd->query('SELECT orders.number, SUM(order_product.quantity*products.price) AS total FROM orders LEFT JOIN order_product ON orders.id = order_product.order_id LEFT JOIN products ON order_product.product_id = products.id GROUP BY orders.number');
 
     while ($donnees4 = $q4->fetch()) {
@@ -83,19 +83,34 @@ function forth_query() {
 ?>
 
 <?php
-//function insert_query( $id, $date, $customer, $number) {
-//$bdd = queries();
-//
-//$q5 = $bdd->query('INSERT INTO `orders` (`id`, `date`, `customer_id`,`number` ) VALUES (:date, )');
-//
-//$q5
-//
-//}
-//echo "nouveau produit ajouté" ;
-//}
-//
-//
-//?>
+function insert_client() {
+global $bdd;
+
+$bdd->exec('INSERT INTO `cutomers` (`first_namename`, `last_name`,`tel`, `address`, `postal_code`, `city`) VALUES (Joane, Dupont, \'33-07451275\', 33 Rue des canards, 38300, Nice)');
+
+
+   echo "Client ajouté avec succès ". '<br />';
+
+
+
+
+}
+
+
+function insert_produit()
+{
+    global $bdd;
+
+    $bdd->exec('INSERT INTO `products` (`name`, `descripition`,`price`, `image`, `weight`, `available`, `category_id`, `quantity`) VALUES (Blanc, xxx, 200, " ", 300, 1, 3, 3)');
+
+
+    echo "Nouveau produit ajouté " . '<br />';
+
+
+}
+
+
+?>
 
 
 

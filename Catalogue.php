@@ -1,5 +1,8 @@
 <?php
+
 require_once "bdd.php";
+require_once "Article.php";
+require_once "Bags.php";
 
 global $bdd;
 
@@ -14,50 +17,46 @@ class Catalogue {
 
         global $bdd;
 
-        $q1 = $bdd->query('SELECT * FROM products');
+        $allArticles = $bdd->query('SELECT * FROM products');
 
-        while ($donnees = $q1->fetch()){
-
-//            return ($donnees['name']);
-           array_push ($this->allArticles, $donnees). '<br />';
-
-//            var_dump($donnees['name']);
+//        while ($donnees = $q1->fetch()){
 //
-//            $products = new ($donnees ['name']);
-//            $this->addProducts($products);
-
-
+//           array_push ($this->allArticles, $donnees). '<br />';
+        foreach($allArticles as $article){
+            $a=new Article($article['name'],$article['description'],$article['price']);
+            array_push($this->allArticles,$a);
         }
+        $allArticles->fetchAll(Pdo::FETCH_ASSOC);
+    }
 
-        $q1->closeCursor();
-//
-//        $allArticles->query('SELECT * FROM products');
-//        return $allArticles;
-//        var_dump ($allArticles);
+    public function displayAllArticles(){
+        foreach($this->allArticles as $article){
+            $article->displayArticle();
+        }
     }
 
 
 
-//    public function displayAllArticles () {
-//        print_r ($this->allArticles);
+//        $q1->closeCursor();
+
+
+
+
+
+//public function displayAllArticles () {
+//    foreach ($this->allArticles as $articles) {
+////               var_dump($articles) ;
+//         echo $articles['name'] .'<br>'  ;
+//         echo $articles['description'].'<br>'  ;
+//         echo $articles['price']. '€'.'<br>'  ;
+//         echo '<img src='.$articles['image']. 'alt="" width="200">' .'<br>';
+//         echo $articles['weight']. ' g'.'<br>'  ;
+//         echo $articles['available']. ' - available' . '<br>'  ;
+//         echo $articles['category_id']. ' category'.'<br>'  ;
+//         echo $articles['quantity']. ' - units' . '<br>'  .'<br>' .'<br>' ;
+//
 //    }
+////       $articles->displayArticle();
 
-//
-
-public function displayAllArticles () {
-    foreach ($this->allArticles as $articles) {
-//               var_dump($articles) ;
-         echo $articles['name'] .'<br>'  ;
-         echo $articles['description'].'<br>'  ;
-         echo $articles['price']. '€'.'<br>'  ;
-         echo '<img src='.$articles['image']. 'alt="" width="200">' .'<br>';
-         echo $articles['weight']. ' g'.'<br>'  ;
-         echo $articles['avaliable']. ' - available' . '<br>'  ;
-         echo $articles['category_id']. ' category'.'<br>'  ;
-         echo $articles['quantity']. ' - units' . '<br>'  .'<br>' .'<br>' ;
-
-    }
-//       $articles->displayArticle();
-    }
 
     }

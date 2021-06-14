@@ -75,13 +75,11 @@ foreach ($products as $product => $items) { //precisa sempre fazer em dois tempo
         <input type="number" name="quantite" value="0"/>
         <input type="submit" value="Valider"/>
         <input type="hidden" name="total" value="<?php echo $items['price']; ?>"/>
-
-
     </form>
     <?php echo '<br>';
 }
-
 ?>
+
 
 
 <h4>

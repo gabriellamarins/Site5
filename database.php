@@ -1,7 +1,10 @@
 <?php
 include "bdd.php";
 require_once "Article.php";
+global $products;
 ?>
+
+
 
 <table style="width:100%">
     <tr>
@@ -23,16 +26,31 @@ require_once "Article.php";
         </td>
 
         <td>
-            <h1> INSERT new product </h1>
-            <?php echo insert_query() ?>
+            <h1> INSERT new client </h1>
+            <?php echo insert_client() ?>
         </td>
     </tr>
 
-<tr>
+    <tr> <h1> INSERT new product </h1>
+        <?php insert_produit() ?>
+    </tr>
 
-</tr>
+<!--    <form method="post" action="newproduct.php">-->
+<!--        <p>-->
+<!--            Quantité:-->
+<!--        </p>-->
+<!--        <select name="resort" id="">-->
+<!--            --><?php //foreach ($products as $key => $sneaker) { ?>
+<!--                <option value="--><?php //echo $key; ?><!--">--><?php //echo $sneaker['name']; ?><!--</option>-->
+<!--            --><?php //} ?>
+<!--        </select>-->
+<!--        <input type="number" name="quantite" value="0"/>-->
+<!--        <input type="submit" value="Valider"/>-->
+<!--        <input type="hidden" name="total" value="--><?php //echo $products['price']; ?><!--"/>-->
+<!--    </form>-->
+<!--    --><?php //echo '<br>';
 
-
+?>
 </table>
 
 

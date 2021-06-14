@@ -1,5 +1,8 @@
 <?php
+require_once "bdd.php";
+require_once "Bags.php";
 
+global $bdd;
 
 
 class Article {
@@ -11,20 +14,21 @@ class Article {
     public $description;
     public $price;
     public $image;
-    public $size;
-    public $color;
+    public $weight;
     public $available;
+    public $category_id;
+    public $quantity;
 
 
 // uma função construtora pra definir as variaveis
 
-    public function __construct($name, $description, $price, $size, $color)
+    public function __construct($name, $description, $price)
     {
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
-        $this->size = $size;
-        $this->color =$color;
+//        $this->size = $size;
+//        $this->color =$color;
     }
 
 
@@ -38,9 +42,9 @@ class Article {
 
         echo $this->name .'<br>';
         echo $this->description . '<br>';
-        echo $this->price . " €" . '<br>';
-        echo $this->size . '<br>';
-        echo $this->color . '<br>';
+        echo $this->price . " €" . '<br>' .'<br>';
+//        echo $this->size . '<br>';
+//        echo $this->color . '<br>';
 
 
     }
