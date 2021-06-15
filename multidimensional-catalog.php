@@ -91,6 +91,7 @@ foreach ($products as $product => $items) { //precisa sempre fazer em dois tempo
 </body>
 <?php
 
+
 include "footer.php" ?>
 </html>
 

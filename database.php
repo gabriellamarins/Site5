@@ -32,16 +32,32 @@ global $bdd;
         </td>
     </tr>
 
-    <tr> <h1> INSERT new product </h1>
-        <?php function insert_product($name,$description,$price,$image) {
-            global $bdd;
-            $req=$bdd->prepare('INSERT INTO products (name,description,price,image) 
-VALUES ( :name,:description,:price,:image)');
-            $req->execute(array('name'=>$name,'description'=>$description,'price'=>$price,'image'=>$image,));
-            echo $name .  ' - produit ajouté';
-            $req->closeCursor();
+</table>
 
-  }
+<?php
+//function insert_client() {
+//global $bdd;
+//
+//$bdd->exec('INSERT INTO `cutomers` (`first_namename`, `last_name`,`tel`, `address`, `postal_code`, `city`) VALUES (Joane, Dupont, \'33-07451275\', 33 Rue des canards, 38300, Nice)');
+//
+//
+//   echo "Client ajouté avec succès ". '<br />';
+
+
+
+
+//}
+
+//  <tr> <h1> INSERT new product </h1>-->
+//      function insert_product($name,$description,$price,$image) {
+//            global $bdd;
+//            $insert=$bdd->prepare('INSERT INTO products (name,description,price,image)
+//VALUES ( :name,:description,:price,:image)');
+//            $insert->execute(array('name'=>$name,'description'=>$description,'price'=>$price,'image'=>$image,));
+//            echo $name .  ' - produit ajouté';
+//            $insert->closeCursor();
+
+
         ?>
 
 
@@ -50,9 +66,8 @@ VALUES ( :name,:description,:price,:image)');
 
 
 
-    </tr>
 
-<!--    <form method="post" action="newproduct.php">-->
+<!--  <form method="post" action="newproduct.php">-->
 <!--        <p>-->
 <!--            Quantité:-->
 <!--        </p>-->
@@ -68,7 +83,6 @@ VALUES ( :name,:description,:price,:image)');
 <!--    --><?php //echo '<br>';
 
 ?>
-</table>
 
 
 

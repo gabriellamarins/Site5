@@ -14,37 +14,38 @@ public $color;
 
 public function __construct(string $name, $description, $price, $size, $color)
 {
+    parent::__construct($name, $description, $price);
     $this->size =$size;
    $this->color =$color;
-parent::__construct($name, $description, $price);
+
 
 }
 
-
+//-----Getter and Setter-------
 
     public function getSize(){
         return $this->size;
     }
 
     public function setMaterial($material){
-        $this->material=$material;
+       return $this->material=$material;
     }
+//
+//    public function getMaterial(){
+//        return $this->material;}
 
-    public function getMaterial(){
-        return $this->material;}
 
 
     public function displayNewAttributes() {
-
-        echo '<li>' . 'Name: ' . $this->name . '</li>';
-        echo '<li>' . 'Description: ' . $this->description . '</li>';
-        echo '<li>' . 'Price: ' . $this->price . '</li>';
-        echo '<li>' . 'Size: ' . $this->size . '</li>' ;
-        echo '<li>' . 'Color: ' . $this->color . '</li>' . '</ul>';
+        echo 'Special Article:'.'<br>';
+        echo  'Name: ' . $this->name .'<br>';
+        echo 'Description: ' . $this->description . '<br>';
+        echo 'Price: ' . $this->price . '<br>';
+        echo 'Size: ' . $this->size . '<br>' ;
+        echo 'Color: ' . $this->color . '<br>' . '<br>';
         }
 
 }
-?>
 
 
 
@@ -74,7 +75,7 @@ parent::__construct($name, $description, $price);
       //  }
 
 
-    }
+//    }
 
 //    public function getColor()
 //    {

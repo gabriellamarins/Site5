@@ -14,21 +14,23 @@ require_once "Bags.php";
 
 //nessa pagina criamos o objeto segundo a classe criada, finalmaente dando valores para os atributos
 
-$article = new Article ('','', '');
+$article = new Article ('Article','test', 50);
 $article -> displayArticle();
 
 
 
 //aqui chamamos a função que sera responsavel pela impressão
-//$article->displayArticle();
 
+?>
 
+<h1> Catalogue </h1>
+<?php
 $articles = new Catalogue();
 
 $articles-> displayAllArticles();
 
 
-$customer = new Client('','','','','','');
+$customer = new Client('1','2','3','4','5','6');
 
 $customer-> displayCustomer() .'<br>';
 ?>
@@ -44,8 +46,12 @@ $customers_list-> displayAllCustomers().'<br>';
 <h1> Sac </h1>
 <?php
 $new_att = new Bags('Bag','lorem ipsum', 50, "big", "blue" );
-echo $new_att ->getSize();
-$new_att->setMaterial();
-echo $new_att->getMaterial();
+echo 'Get Size: '.$new_att ->getSize(). '<br>';
+echo 'Set Material: '.$new_att->setMaterial('Leather');
+//echo $new_att->getMaterial();
 //$new_att-> displayNewAttributes();
 ?>
+
+
+
+$panier = new Panier();

@@ -24,11 +24,11 @@ class Catalogue {
 //           array_push ($this->allArticles, $donnees). '<br />';
         foreach($allArticles as $article){
             if($article['size']!= '' or $article['color']!='') {
-                $a = new Bags($article['name'], $article['description'], $article['price'], $article['size'], $article['color']);
-                array_push($this->allArticles, $a);
+                $x = new Bags($article['name'], $article['description'], $article['price'], $article['size'], $article['color']);
+                array_push($this->allArticles, $x);
             } else {
-                $a = new Article($article['name'], $article['description'], $article['price']);
-                array_push($this->allArticles, $a);
+                $x = new Article($article['name'], $article['description'], $article['price']);
+                array_push($this->allArticles, $x);
             }
         }
         $allArticles->fetchAll(Pdo::FETCH_ASSOC);

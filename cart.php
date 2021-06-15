@@ -4,7 +4,7 @@ include "my_functions.php";
 //include "multidimensional-catalog.php";
 
 if (!is_numeric($_POST['total']) or !is_numeric($_POST['quantite'])) {
-    header('http://localhost/multidimensional-catalog.php', false);
+    header('http://localhost/multidimensional-catalog.php', true,404);
     exit ();
 }
 

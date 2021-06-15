@@ -24,11 +24,11 @@ class Client {
     }
 
     public function displayCustomer(){
-        echo '<li>' . 'Name: ' .$this->first_name . '</li>';
-        echo '<li>' . 'Last Name: ' . $this->last_name .'</li>';
-        echo '<li>' . 'Tel: ' . $this->tell . '</li>';
-        echo '<li>' . 'Address: ' . $this->address . '</li>';
-        echo '<li>' . 'Postal Code: ' . $this->postal_code . '</li>' . '</ul>';
-        echo '<li>' . 'City: ' . $this->city . '</li>';
+        echo 'Name: ' .$this->first_name . '<br>';
+        echo 'Last Name: ' . $this->last_name .'<br>';
+        echo 'Tel: ' . $this->tell . '<br>';
+        echo 'Address: ' . $this->address . '<br>';
+        echo 'Postal Code: ' . $this->postal_code . '<br>' ;
+        echo 'City: ' . $this->city . '<br>'. '<br>';
     }
 }

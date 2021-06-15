@@ -1,8 +1,22 @@
 <?php
 
 
+//try{
+$bdd = new PDO('mysql:host=localhost;dbname=gabriella5;charset=utf8', 'gabriella3', 'qualquercoisa');
 
- $bdd = new PDO('mysql:host=localhost;dbname=dump;charset=utf8', 'gabriella2', 'qualquercoisa');
+
+//    $dbh = new pdo( 'mysql:host=localhost;dbname=gabriella5;charset=utf8',
+//        'gabriella3',
+//        'qualquercoisa',
+//        array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+//    die(json_encode(array('outcome' => true)));
+//}
+//catch(PDOException $ex){
+//    die(json_encode(array('outcome' => false, 'message' => 'Unable to connect')));
+//}
+
+
+
 global $bdd;
 
 
@@ -86,28 +100,26 @@ function forth_query() {
 function insert_client() {
 global $bdd;
 
-$bdd->exec('INSERT INTO `cutomers` (`first_namename`, `last_name`,`tel`, `address`, `postal_code`, `city`) VALUES (Joane, Dupont, \'33-07451275\', 33 Rue des canards, 38300, Nice)');
+$bdd->exec('INSERT INTO `customers` (`first_name`, `last_name`,`tel`, `address`, `postal_code`, `city`) VALUES ("Joane", "Dupont", \'33-07451275\', \'33 Rue des canards\', 38300, "Nice")');
 
 
    echo "Client ajouté avec succès ". '<br />';
 
 
-
-
 }
 
 
-function insert_produit()
-{
-    global $bdd;
-
-    $bdd->exec('INSERT INTO `products` (`name`, `descripition`,`price`, `image`, `weight`, `available`, `category_id`, `quantity`) VALUES (Blanc, xxx, 200, " ", 300, 1, 3, 3)');
-
-
-    echo "Nouveau produit ajouté " . '<br />';
-
-
-}
+//function insert_produit()
+//{
+//    global $bdd;
+//
+//    $bdd->exec('INSERT INTO `products` (`name`, `descripition`,`price`, `image`, `weight`, `available`, `category_id`, `quantity`) VALUES (Blanc, xxx, 200, " ", 300, 1, 3, 3)');
+//
+//
+//    echo "Nouveau produit ajouté " . '<br />';
+//
+//
+//}
 
 
 ?>
